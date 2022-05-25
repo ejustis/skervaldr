@@ -40,3 +40,9 @@ shape = SubResource( 2 )
 [node name="Tip" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00148871, -1.41506 )
 shape = SubResource( 3 )
+
+[node name="AliveTimer" type="Timer" parent="."]
+wait_time = 30.0
+one_shot = true
+
+[connection signal="timeout" from="AliveTimer" to="." method="_on_AliveTimer_timeout"]

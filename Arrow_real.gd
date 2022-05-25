@@ -1,15 +1,11 @@
 extends RigidBody
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
+onready var alive_timer : Timer = $AliveTimer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass
+	#alive_timer.start()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-
+func _on_AliveTimer_timeout():
+	queue_free()
